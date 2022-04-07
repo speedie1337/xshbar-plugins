@@ -4,8 +4,8 @@ AUTHOR="speedie"
 VERSION="0.1"
 
 # Set variables
-folder="/mnt/storage01/Music/Playlist/"
-format=".mp3"
+folder="/" # NOTE: Must be changed to the directory where music is played from.
+format=".mp3" # Change the format if you won't be playing .mp3s.
 uncut=$(mocp -Q %file)
 empty=""
 
