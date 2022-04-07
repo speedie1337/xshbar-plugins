@@ -1,0 +1,29 @@
+TYPE=xshbar_plugin
+NAME="mocp"
+AUTHOR="speedie"
+VERSION="0.1"
+
+# Set variables
+folder="/mnt/storage01/Music/Playlist/"
+format=".mp3"
+uncut=$(mocp -Q %file)
+empty=""
+
+mocpquery()
+{
+  mocp_full_filename=$uncut
+  mocp_file_title=$(echo "${uncut/$folder/$empty}") && mocp_file_title=$(echo "${mocp_file_title/$format/$empty}")
+  mocp_currentfile=$uncut
+  mocp_title=$(mocp -Q %title)
+  mocp_album=$(mocp -Q %album)
+  mocp_state=$(mocp -Q %state)
+  mocp_totaltime=$(mocp -Q %tt)
+  mocp_timeleft=$(mocp -Q %tl)
+  mocp_artist=$(mocp -Q %artist)
+  mocp_rate=$(mocp -Q %r)
+  mocp_bitrate=$(mocp -Q %b)
+  mocp_currenttime=$(mocp -Q %ct)
+  mocp_currentsec=$(mocp -Q %cs)
+}
+
+mocpquery
