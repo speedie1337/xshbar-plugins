@@ -4,7 +4,7 @@ AUTHOR="speedie"
 VERSION="0.2-08-04-2022-r2"
 
 # Set variables
-folder="/mnt/storage01/Music/Playlist/" # Your music folder.
+folder="/path/to/my/music" # Your music folder.
 format=".mp3" # The format of your music.
 uncut=$(mocp -Q %file) # Leave as default.
 title=" " # Anything in here will be added before the variable.
