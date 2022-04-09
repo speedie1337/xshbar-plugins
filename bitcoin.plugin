@@ -1,0 +1,12 @@
+TYPE=xshbar_plugin
+NAME="bitcoin"
+AUTHOR="speedie"
+VERSION="0.1"
+
+bitcoincurl()
+{
+  BITCOIN_COMMAND=$(curl -s http://api.coindesk.com/v1/bpi/currentprice.json  | jq '.bpi.USD.rate')
+  BITCOIN_RESULT="BTC: $BITCOIN_COMMAND"
+}
+
+bitcoincurl
