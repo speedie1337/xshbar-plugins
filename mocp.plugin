@@ -4,10 +4,10 @@ AUTHOR="speedie"
 VERSION="0.3-09-04-2022-r1"
 
 # Set variables
-folder="/mnt/storage01/Music/Playlist/" # Your music folder.
+folder="/path/to/your/awesome/music" # Your music folder.
 format=".mp3" # The format of your music.
 uncut=$(mocp -Q %file) # Leave as default.
-title="\ue05c" # Anything in here will be added before the variable.
+title="" # Anything in here will be added before the variable.
 empty=""
 
 # Hide $title if $uncut is empty
