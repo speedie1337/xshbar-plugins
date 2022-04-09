@@ -1,0 +1,19 @@
+TYPE=xshbar_plugin
+NAME="package"
+AUTHOR="speedie"
+VERSION="0.1"
+
+PACKAGEGREP()
+{
+  PACKAGE_COUNT_ARCH=$(pacman -Q | wc -l)
+  PACKAGE_COUNT_GENTOO=$(ls -d /var/db/pkg/*/* | wc -l)
+  PACKAGE_COUNT_DEBIAN=$(dpkg --get-selections | wc -l)
+  PACKAGE_COUNT_REDHAT=$(rpm -qa | wc -l)
+  PACKAGE_COUNT_VOID=$(xbps-query --list-pkgs | wc -l)
+  PACKAGE_COUNT_NIXOS=$(ls /run/current-system/sw/bin | wc -l)
+  # We can ignore the warnings I think.
+}
+
+PACKAGEGREP
+
+echo $PACKAGE_COUNT
