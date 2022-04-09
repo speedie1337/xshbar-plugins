@@ -1,0 +1,17 @@
+TYPE=xshbar_plugin
+NAME="systeminfo"
+AUTHOR="speedie"
+VERSION="0.1"
+
+systeminfogrep()
+{
+  systeminfo_hostname=$(hostname || systeminfo_hostname=$(</etc/hostname))
+  systeminfo_threads=$(nproc)
+  systeminfo_shell=$(echo $SHELL)
+  systeminfo_user=$(whoami)
+  systeminfo_kernel=$(uname -r || systeminfo_kernel=$(Linux))
+  systeminfo_operatingsystem=$(uname -o)
+}
+
+systeminfogrep
+
