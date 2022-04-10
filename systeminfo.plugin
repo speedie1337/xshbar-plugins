@@ -1,7 +1,7 @@
 TYPE=xshbar_plugin
 NAME="systeminfo"
 AUTHOR="speedie"
-VERSION="0.1"
+VERSION="0.1-10-04-2022-r1"
 
 systeminfogrep()
 {
@@ -9,7 +9,7 @@ systeminfogrep()
   systeminfo_threads=$(nproc)
   systeminfo_shell=$(echo $SHELL)
   systeminfo_user=$(whoami)
-  systeminfo_kernel=$(uname -r || systeminfo_kernel=$(Linux))
+  systeminfo_kernel=$(uname -r || systeminfo_kernel="Linux")
   systeminfo_operatingsystem=$(uname -o)
 }
 
