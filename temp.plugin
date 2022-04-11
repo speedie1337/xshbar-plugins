@@ -12,5 +12,3 @@ TEMPGREP()
 }
 
 TEMPGREP
-
-echo $TEMP_CPU
