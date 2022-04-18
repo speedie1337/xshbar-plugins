@@ -1,0 +1,14 @@
+TYPE=xshbar_plugin
+NAME="rauta"
+AUTHOR="speedie"
+VERSION="0.1"
+
+RAUTA()
+{
+  curl -o /tmp/rchat-msg https://donut.gq/rautafarmi/messages.txt
+  RAUTA_TITLE="|  "
+  RAUTA_NM=$(cat /tmp/rchat-msg | sed -n 1,2p | sed "s/<span style='color: #2c49c9;'>//" | sed "s/<span style='color: #1c8757;'>//" | sed "s|</span>||" | sed "s|</span> <span style='color: #727272;'>| at |" | sed "s|</span>|:|")  
+  RAUTA_NEWEST_MESSAGE=$(printf "$RAUTA_TITLE $RAUTA_NM")
+}
+
+RAUTA
