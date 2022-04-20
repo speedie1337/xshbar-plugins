@@ -1,0 +1,13 @@
+TYPE=xshbar_plugin
+NAME="battery"
+AUTHOR="speedie"
+VERSION="0.1"
+
+BATTERY()
+{
+  BATTERY_0_CAPACITY=$(printf "$(cat /sys/class/power_supply/BAT0/capacity)%")
+  #BATTERY_1_CAPACITY=$(printf "$(cat /sys/class/power_supply/BAT1/capacity)%")
+  #Uncomment the above if you will be using a second battery
+}
+
+BATTERY
