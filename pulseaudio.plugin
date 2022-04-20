@@ -1,6 +1,6 @@
 TYPE=xshbar_plugin
 NAME="pulseaudio"
-AUTHOR="gabubu"
+AUTHOR="Gabubu"
 VERSION="1-20-04-2022"
 
 paquery()
