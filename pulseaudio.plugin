@@ -1,0 +1,11 @@
+TYPE=xshbar_plugin
+NAME="pulseaudio"
+AUTHOR="gabubu"
+VERSION="1-20-04-2022"
+
+paquery()
+{
+  pa_vol=$(if pamixer --sink 0 --get-mute | grep -q 'false'; then echo "`pamixer --sink 0 --get-volume`%"; else echo "OFF"; fi)
+}
+
+paquery
