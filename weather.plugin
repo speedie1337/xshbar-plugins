@@ -5,7 +5,7 @@ VERSION="0.2"
 
 WEATHER_SETVAR()
 {
-  WEATHER_LOCATION=Stockholm
+  WEATHER_LOCATION=
   WEATHER_URL="wttr.in/$WEATHER_LOCATION"
   WEATHER_TEMP=$(curl -s $WEATHER_URL?format=3 | sed "s/.* //")
   WEATHER_ICON=$(curl -s $WEATHER_URL?format=2 | cut -c 1-3) # NOTE: To use this you MUST use dwm with color emoji support
