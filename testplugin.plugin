@@ -1,0 +1,14 @@
+TYPE=xshbar_plugin
+NAME="testplugin"
+AUTHOR="speedie"
+VERSION="0.1"
+
+# This is a simple plugin test.
+# Use this as a template when writing your own.
+testplugin()
+{
+  testprint=$(echo "This is a test of the plugin system in xshbar! Cool?")
+}
+
+testplugin
+#exit 0 <-- Using exit is a big no-no.

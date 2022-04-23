@@ -1,0 +1,21 @@
+TYPE=xshbar_plugin
+NAME="date"
+AUTHOR="speedie"
+VERSION="0.2"
+
+getdate()
+{
+  date_time="$(date +%H:%M)"
+  date_time_sec="$(date +%T)" # Don't recommend using if you have a lot of plugins
+  date_date="$(date +%d/%m/%Y)"
+  date_currentday="$(date +%A)"
+  date_currentday_num="$(date +%u)"
+  date_hour="$(date +%H)"
+  date_year="$(date +%C)"
+  date_nanosec="$(date +%N)"
+  date_12h="$(date +%p)"
+  date_24h="$(date +%R)"
+  date_full="$(date)"
+}
+
+getdate
