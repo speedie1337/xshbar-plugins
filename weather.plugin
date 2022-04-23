@@ -1,0 +1,16 @@
+TYPE=xshbar_plugin
+NAME="weather"
+AUTHOR="speedie"
+VERSION="0.2"
+
+WEATHER_SETVAR()
+{
+  WEATHER_LOCATION=Stockholm
+  WEATHER_URL="wttr.in/$WEATHER_LOCATION"
+  WEATHER_TEMP=$(curl -s $WEATHER_URL?format=3 | sed "s/.* //")
+  WEATHER_ICON=$(curl -s $WEATHER_URL?format=2 | cut -c 1-3) # NOTE: To use this you MUST use dwm with color emoji support
+  WEATHER_FORECAST=$(curl -s wttr.in/$WEATHER_LOCATION | sed -n 3,3p | sed 's|...............................||')
+  WEATHER_OUTPUT=$(printf "$WEATHER_LOCATION: $WEATHER_ICON $WEATHER_FORECAST, $WEATHER_TEMP") # This one is useful if you just wanna echo it all at once
+}
+
+WEATHER_SETVAR
