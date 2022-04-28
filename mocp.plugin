@@ -1,0 +1,31 @@
+TYPE=xshbar_plugin
+NAME="mocp"
+AUTHOR="speedie"
+VERSION="0.4-28-04-2022-r1"
+
+# Set variables
+mocp_file_cut=$(mocp -Q %file | awk -F/ '$0=$NF' | sed "s|[.]...||")
+title="<  " # Anything in here will be added before the variable.
+
+# Hide $title if $uncut is empty
+case "$(echo $uncut)" in
+    "") restoretitle=$title && title="" ;;
+esac
+
+mocpquery()
+{
+  mocp_full_filename="$title $(mocp -Q %file)"
+  mocp_file_title=$(printf "$title $mocp_file_cut")
+  mocp_title="$title $(mocp -Q %title)"
+  mocp_album="$title $(mocp -Q %album)"
+  mocp_state="$title $(mocp -Q %state)"
+  mocp_totaltime="$title $(mocp -Q %tt)"
+  mocp_timeleft="$title $(mocp -Q %tl)"
+  mocp_artist="$title $(mocp -Q %artist)"
+  mocp_rate="$title $(mocp -Q %r)"
+  mocp_bitrate="$title $(mocp -Q %b)"
+  mocp_currenttime="$title $(mocp -Q %ct)"
+  mocp_currentsec="$title $(mocp -Q %cs)"
+}
+
+mocpquery
