@@ -1,0 +1,11 @@
+TYPE=xshbar_plugin
+NAME="newsboat"
+AUTHOR="speedie"
+VERSION="0.1"
+
+NEWSBOAT()
+{
+  NEWSBOAT_UNREAD=$(newsboat -x print-unread | sed "s| unread articles||")
+}
+
+NEWSBOAT
