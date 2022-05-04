@@ -1,0 +1,12 @@
+TYPE=xshbar_plugin 
+NAME="eselectnews" 
+AUTHOR="speedie"
+VERSION="0.1"
+
+ESELNEWS()
+{
+  ESELNEWSCOUNT=$(eselect news list | wc -l)
+}
+
+ESELNEWS
+
