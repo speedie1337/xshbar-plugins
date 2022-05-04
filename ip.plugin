@@ -1,0 +1,11 @@
+TYPE=xshbar_plugin
+NAME="ip"
+AUTHOR="speedie"
+VERSION="0.1"
+
+PUB_IP()
+{
+  PUBLIC_IP=$(curl -s ifconfig.co)
+}
+
+PUB_IP
